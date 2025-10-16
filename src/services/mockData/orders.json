@@ -1,0 +1,63 @@
+[
+  {
+    "Id": 1,
+    "orderId": "ORD-2024-001",
+    "items": [
+      {
+        "productId": 1,
+        "name": "Summer Floral Dress",
+        "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500",
+        "size": "M",
+        "color": "Pink",
+        "quantity": 1,
+        "price": 1999
+      }
+    ],
+    "totalAmount": 2098,
+    "shippingAddress": {
+      "name": "Jane Smith",
+      "street": "123 Fashion Street",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "zipCode": "400001",
+      "phone": "+91 9876543210"
+    },
+    "orderDate": "2024-01-15",
+    "status": "delivered"
+  },
+  {
+    "Id": 2,
+    "orderId": "ORD-2024-002",
+    "items": [
+      {
+        "productId": 3,
+        "name": "Running Sneakers",
+        "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500",
+        "size": "9",
+        "color": "White",
+        "quantity": 1,
+        "price": 5999
+      },
+      {
+        "productId": 4,
+        "name": "Casual Cotton T-Shirt",
+        "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500",
+        "size": "L",
+        "color": "Black",
+        "quantity": 2,
+        "price": 699
+      }
+    ],
+    "totalAmount": 7497,
+    "shippingAddress": {
+      "name": "John Doe",
+      "street": "456 Style Avenue",
+      "city": "Delhi",
+      "state": "Delhi",
+      "zipCode": "110001",
+      "phone": "+91 9876543211"
+    },
+    "orderDate": "2024-01-20",
+    "status": "shipped"
+  }
+]
