@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import ApperIcon from '@/components/ApperIcon';
-import SearchBar from '@/components/molecules/SearchBar';
-import Button from '@/components/atoms/Button';
-import Badge from '@/components/atoms/Badge';
-import { cn } from '@/utils/cn';
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "@/layouts/Root";
+import { cn } from "@/utils/cn";
+import ApperIcon from "@/components/ApperIcon";
+import SearchBar from "@/components/molecules/SearchBar";
 
 const Header = ({ cartItemCount = 0, wishlistItemCount = 0 }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -35,13 +34,19 @@ const Header = ({ cartItemCount = 0, wishlistItemCount = 0 }) => {
     { name: 'Brands', href: '/brands' }
   ];
 
-  const categoryDropdown = [
+const categoryDropdown = [
     { name: 'Women', href: '/?category=women' },
     { name: 'Men', href: '/?category=men' },
     { name: 'Kids', href: '/?category=kids' },
     { name: 'Accessories', href: '/?category=accessories' },
     { name: 'Shoes', href: '/?category=shoes' }
   ];
+
+  const { logout } = useAuth();
+
+  const handleLogout = () => {
+    logout();
+  };
 
   return (
     <>
@@ -125,16 +130,20 @@ const Header = ({ cartItemCount = 0, wishlistItemCount = 0 }) => {
                     </div>
                   )}
                 </div>
-              ))}
+))}
             </nav>
 
-            {/* Search Bar - Desktop */}
-            <div className="hidden md:block flex-1 max-w-md mx-8">
-              <SearchBar onSearch={handleSearch} />
-            </div>
-
-            {/* Right Actions */}
+{/* Action Buttons */}
             <div className="flex items-center gap-2">
+              {/* Logout Button - Desktop Only */}
+              <button
+                onClick={handleLogout}
+                className="hidden lg:block p-2.5 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-full transition-all duration-200"
+                title="Logout"
+              >
+                <ApperIcon name="LogOut" size={20} />
+              </button>
+              
               {/* Search Icon - Mobile Only */}
               <button className="md:hidden p-2 text-gray-600 hover:text-primary transition-colors">
                 <ApperIcon name="Search" size={22} />
